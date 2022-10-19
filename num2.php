@@ -20,6 +20,9 @@
 if (!empty($_POST)){
 $n = (int)$_POST['num1'];
 $m = (int)$_POST['num2'];
+if ($n < 0 || $m < 0 || $n > 1000 || $m > 1000){
+    echo 'Неверные данные входа';
+} else{
 $iterations = 0;
 $iterations += intdiv($m, 2);
 $n += intdiv($m, 2);
@@ -40,5 +43,6 @@ else {
         echo 'Количество коммитов: '.($iterations + 3);
     }
 
+}
 }
 }
